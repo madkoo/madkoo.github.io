@@ -1,1 +1,13 @@
-theme: jekyll-theme-architect
+description: >-
+  This is a sample Jekyll website that is hosted in GitHub Pages
+#twitter_username: name
+github_username: madkoo
+theme: minima
+markdown: GFM
+plugins:
+  - jekyll-feed:
+show_excerpts: true
+header_pages:
+- get-started.md
+- about-markdown.md
+- About.md
