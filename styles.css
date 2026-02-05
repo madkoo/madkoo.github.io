@@ -247,7 +247,7 @@ body {
     background-color: var(--surface-accent);
     border: 1px solid var(--outline-color);
     border-radius: var(--curve-radius);
-    transition: transform var(--animate-speed), box-shadow var(--animate-speed);
+    transition: transform var(--animate-speed), box-shadow var(--animate-speed), border-color var(--animate-speed);
 }
 
 .tech-page .tech-category {
@@ -256,18 +256,21 @@ body {
 
 .tech-category:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 12px var(--shadow-subtle);
+    box-shadow: 0 8px 16px var(--shadow-subtle);
+    border-color: var(--brand-blue);
 }
 
 .category-name {
-    font-size: 1.1rem;
-    margin-bottom: var(--gap-tiny);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: var(--gap-small);
     color: var(--brand-blue);
 }
 
 .category-items {
     color: var(--text-muted);
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .primary-focus {
@@ -276,6 +279,7 @@ body {
     border-left: 4px solid var(--brand-blue);
     border-radius: var(--curve-radius);
     color: var(--text-primary);
+    font-size: 1.05rem;
 }
 
 .tech-page .primary-focus {
@@ -334,6 +338,14 @@ body {
 
 .link-symbol {
     font-size: 2.5rem;
+    margin-bottom: var(--gap-tiny);
+    color: var(--text-primary);
+}
+
+/* SVG Icon Styling */
+.profile-link svg.link-symbol {
+    width: 40px;
+    height: 40px;
     margin-bottom: var(--gap-tiny);
 }
 
