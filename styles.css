@@ -1,0 +1,488 @@
+/* ==========================================
+   Theme Configuration Variables
+   ========================================== */
+:root {
+    /* Brand Colors */
+    --brand-blue: #0969da;
+    --brand-blue-dark: #0550ae;
+    --text-primary: #1f2328;
+    --text-muted: #656d76;
+    --surface-main: #ffffff;
+    --surface-accent: #f6f8fa;
+    --outline-color: #d1d9e0;
+    --shadow-subtle: rgba(31, 35, 40, 0.04);
+    
+    /* Font Configuration */
+    --typeface: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+    --text-base: 16px;
+    --text-medium: 1.25rem;
+    --text-big: 1.75rem;
+    --text-huge: 2.5rem;
+    --line-spacing: 1.6;
+    
+    /* Layout Spacing */
+    --gap-tiny: 0.5rem;
+    --gap-small: 1rem;
+    --gap-regular: 1.5rem;
+    --gap-large: 2rem;
+    --gap-huge: 3rem;
+    
+    /* Design Elements */
+    --content-limit: 900px;
+    --curve-radius: 8px;
+    --animate-speed: 0.3s;
+}
+
+/* Dark Theme Adaptation */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #e6edf3;
+        --text-muted: #7d8590;
+        --surface-main: #0d1117;
+        --surface-accent: #161b22;
+        --outline-color: #30363d;
+        --shadow-subtle: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* ==========================================
+   Foundation Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--text-base);
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: var(--typeface);
+    color: var(--text-primary);
+    background-color: var(--surface-main);
+    line-height: var(--line-spacing);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   Page Indicators Navigation
+   ========================================== */
+.page-indicators {
+    position: fixed;
+    right: var(--gap-large);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-regular);
+}
+
+.indicator {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: var(--outline-color);
+    border-radius: 50%;
+    transition: all var(--animate-speed);
+    text-decoration: none;
+}
+
+.indicator:hover {
+    background: var(--brand-blue);
+    transform: scale(1.3);
+}
+
+.indicator.current-page {
+    background: var(--brand-blue);
+    width: 14px;
+    height: 14px;
+}
+
+.indicator-label {
+    position: absolute;
+    right: calc(100% + var(--gap-small));
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--animate-speed);
+}
+
+.indicator:hover .indicator-label {
+    opacity: 1;
+}
+
+/* ==========================================
+   Full Page Section Layout
+   ========================================== */
+.page-wrapper {
+    width: 100%;
+}
+
+.fullpage-section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: var(--gap-large) var(--gap-regular);
+}
+
+.section-inner {
+    width: 100%;
+    max-width: var(--content-limit);
+    margin: 0 auto;
+}
+
+/* Alternating Background Pattern */
+.info-page,
+.certs-page {
+    background-color: var(--surface-accent);
+}
+
+/* ==========================================
+   Hero Page Styling
+   ========================================== */
+.hero-page {
+    text-align: center;
+}
+
+.hero-greeting {
+    font-size: var(--text-huge);
+    font-weight: 700;
+    margin-bottom: var(--gap-regular);
+    color: var(--text-primary);
+}
+
+.hero-description {
+    font-size: var(--text-medium);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto var(--gap-huge);
+    line-height: 1.5;
+}
+
+.continue-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-small);
+    color: var(--text-muted);
+    animation: bobbing 2s ease-in-out infinite;
+}
+
+.continue-text {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.continue-arrow {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes bobbing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* ==========================================
+   Content Page Typography
+   ========================================== */
+.page-headline {
+    font-size: var(--text-big);
+    font-weight: 600;
+    margin-bottom: var(--gap-large);
+    color: var(--text-primary);
+}
+
+.info-block {
+    max-width: 750px;
+}
+
+.intro-paragraph {
+    margin-bottom: var(--gap-regular);
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.specialty-items {
+    list-style: none;
+    padding-left: 0;
+}
+
+.specialty {
+    padding: var(--gap-tiny) 0;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+/* ==========================================
+   Technology Cards Grid
+   ========================================== */
+.technology-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--gap-regular);
+    margin-bottom: var(--gap-large);
+}
+
+.tech-category {
+    padding: var(--gap-regular);
+    background-color: var(--surface-accent);
+    border: 1px solid var(--outline-color);
+    border-radius: var(--curve-radius);
+    transition: transform var(--animate-speed), box-shadow var(--animate-speed);
+}
+
+.tech-page .tech-category {
+    background-color: var(--surface-main);
+}
+
+.tech-category:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px var(--shadow-subtle);
+}
+
+.category-name {
+    font-size: 1.1rem;
+    margin-bottom: var(--gap-tiny);
+    color: var(--brand-blue);
+}
+
+.category-items {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.primary-focus {
+    padding: var(--gap-regular);
+    background-color: var(--surface-accent);
+    border-left: 4px solid var(--brand-blue);
+    border-radius: var(--curve-radius);
+    color: var(--text-primary);
+}
+
+.tech-page .primary-focus {
+    background-color: var(--surface-main);
+}
+
+/* ==========================================
+   Certification Badges
+   ========================================== */
+.certification-badges {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-regular);
+}
+
+.badge-item {
+    padding: var(--gap-regular);
+    background-color: var(--surface-main);
+    border-radius: var(--curve-radius);
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+/* ==========================================
+   Connection Profile Links
+   ========================================== */
+.connection-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--gap-regular);
+    margin-bottom: var(--gap-huge);
+}
+
+.profile-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gap-large);
+    background-color: var(--surface-accent);
+    border: 2px solid var(--outline-color);
+    border-radius: var(--curve-radius);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--animate-speed);
+    min-height: 140px;
+}
+
+.profile-link:hover {
+    border-color: var(--brand-blue);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px var(--shadow-subtle);
+}
+
+.link-symbol {
+    font-size: 2.5rem;
+    margin-bottom: var(--gap-tiny);
+}
+
+.link-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Contact Information
+   ========================================== */
+.outreach-message {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--gap-huge);
+}
+
+.inline-link {
+    color: var(--brand-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--animate-speed);
+}
+
+.inline-link:hover {
+    color: var(--brand-blue-dark);
+    text-decoration: underline;
+}
+
+/* ==========================================
+   Footer Credits
+   ========================================== */
+.page-credits {
+    text-align: center;
+    padding: var(--gap-large) 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   Responsive Adaptations
+   ========================================== */
+
+/* Tablet Adjustments */
+@media (max-width: 768px) {
+    :root {
+        --text-huge: 2rem;
+        --text-big: 1.5rem;
+        --gap-huge: 2rem;
+    }
+    
+    .fullpage-section {
+        padding: var(--gap-regular) var(--gap-small);
+    }
+    
+    .page-indicators {
+        right: var(--gap-small);
+    }
+    
+    .technology-cards {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+    
+    .connection-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    :root {
+        --text-huge: 1.75rem;
+        --text-big: 1.25rem;
+        --text-medium: 1.1rem;
+        --gap-large: 1.5rem;
+    }
+    
+    html {
+        scroll-snap-type: none;
+    }
+    
+    .fullpage-section {
+        min-height: auto;
+        padding: var(--gap-huge) var(--gap-small);
+    }
+    
+    .page-indicators {
+        display: none;
+    }
+    
+    .technology-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .certification-badges {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-link {
+        min-height: 120px;
+    }
+}
+
+/* ==========================================
+   Accessibility Enhancements
+   ========================================== */
+
+/* Keyboard Focus Styling */
+a:focus,
+button:focus {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: 2px;
+}
+
+/* Respect Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Print Optimization */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .page-indicators {
+        display: none;
+    }
+    
+    .fullpage-section {
+        page-break-inside: avoid;
+        min-height: auto;
+    }
+    
+    .profile-link {
+        border: 1px solid #000;
+    }
+    
+    a {
+        color: #0000ff;
+        text-decoration: underline;
+    }
+}
