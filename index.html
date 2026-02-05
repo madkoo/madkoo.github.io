@@ -8,101 +8,162 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <h1 class="header__title">👋 Hi, I'm Madis Koosaar</h1>
-            <p class="header__tagline">Platform Engineer building better DevEx through automation and IaC. Passionate about DevOps culture and technical leadership.</p>
-        </header>
+    <!-- Page Navigation -->
+    <aside class="page-indicators">
+        <a href="#hero" class="indicator current-page" title="Introduction">
+            <span class="indicator-label">Intro</span>
+        </a>
+        <a href="#about" class="indicator" title="About">
+            <span class="indicator-label">About</span>
+        </a>
+        <a href="#stack" class="indicator" title="Tech Stack">
+            <span class="indicator-label">Tech</span>
+        </a>
+        <a href="#credentials" class="indicator" title="Certifications">
+            <span class="indicator-label">Certs</span>
+        </a>
+        <a href="#reach" class="indicator" title="Connect">
+            <span class="indicator-label">Connect</span>
+        </a>
+    </aside>
 
-        <!-- About Section -->
-        <section class="about">
-            <h2 class="section__title">🚀 About Me</h2>
-            <p class="about__text">
-                I'm a Principal Consultant at <strong>Solidify/Eficode</strong>, working together with the <strong>GitHub Experts Service Team</strong>, specializing in:
-            </p>
-            <ul class="about__list">
-                <li>🔧 Platform Engineering & Developer Experience (DevEx)</li>
-                <li>☁️ Cloud Infrastructure & Automation (Azure, IaC)</li>
-                <li>🔄 DevOps Culture & Practices</li>
-                <li>🔐 Security & Compliance</li>
-                <li>📈 Technical Leadership & Consulting</li>
-            </ul>
-        </section>
-
-        <!-- Tech Stack Section -->
-        <section class="tech-stack">
-            <h2 class="section__title">💻 Tech Stack</h2>
-            <div class="tech-stack__grid">
-                <div class="tech-stack__item">
-                    <h3>Code</h3>
-                    <p>.NET, .NET Core, C#</p>
-                </div>
-                <div class="tech-stack__item">
-                    <h3>Scripting</h3>
-                    <p>TypeScript, JavaScript, PowerShell, Python</p>
-                </div>
-                <div class="tech-stack__item">
-                    <h3>DevOps</h3>
-                    <p>Azure, GitHub Actions, Docker, Terraform, Kubernetes</p>
-                </div>
-                <div class="tech-stack__item">
-                    <h3>Databases</h3>
-                    <p>MSSQL, PostgreSQL, SQLite, NoSQL</p>
+    <main class="page-wrapper">
+        <!-- Page 1: Hero Introduction -->
+        <article id="hero" class="fullpage-section hero-page">
+            <div class="section-inner">
+                <h1 class="hero-greeting">👋 Hi, I'm Madis Koosaar</h1>
+                <p class="hero-description">Platform Engineer building better DevEx through automation and IaC. Passionate about DevOps culture and technical leadership.</p>
+                <div class="continue-indicator">
+                    <span class="continue-text">Explore more</span>
+                    <svg class="continue-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
                 </div>
             </div>
-            <div class="tech-stack__focus">
-                <strong>Focus Areas:</strong> DevOps Transformation, Platform Engineering, IaC, CI/CD
+        </article>
+
+        <!-- Page 2: About Information -->
+        <!-- Page 2: About Information -->
+        <article id="about" class="fullpage-section info-page">
+            <div class="section-inner">
+                <h2 class="page-headline">🚀 About Me</h2>
+                <div class="info-block">
+                    <p class="intro-paragraph">
+                        I'm a Principal Consultant at <strong>Solidify/Eficode</strong>, working together with the <strong>GitHub Experts Service Team</strong>, specializing in:
+                    </p>
+                    <ul class="specialty-items">
+                        <li class="specialty">🔧 Platform Engineering & Developer Experience (DevEx)</li>
+                        <li class="specialty">☁️ Cloud Infrastructure & Automation (Azure, IaC)</li>
+                        <li class="specialty">🔄 DevOps Culture & Practices</li>
+                        <li class="specialty">🔐 Security & Compliance</li>
+                        <li class="specialty">📈 Technical Leadership & Consulting</li>
+                    </ul>
+                </div>
             </div>
-        </section>
+        </article>
 
-        <!-- Certifications Section -->
-        <section class="certifications">
-            <h2 class="section__title">🎓 Key Certifications</h2>
-            <ul class="certifications__list">
-                <li>✅ GitHub Actions</li>
-                <li>✅ GitHub Administration</li>
-                <li>✅ GitHub Advanced Security</li>
-                <li>✅ GitHub Fundamentals</li>
-                <li>✅ Microsoft DevOps Engineer Expert</li>
-                <li>✅ Microsoft Cybersecurity Architect Expert</li>
-            </ul>
-        </section>
-
-        <!-- Links Section -->
-        <section class="links">
-            <h2 class="section__title">🔗 Connect</h2>
-            <div class="links__grid">
-                <a href="https://github.com/madkoo" class="link-card" target="_blank" rel="noopener noreferrer">
-                    <span class="link-card__icon">🐙</span>
-                    <span class="link-card__text">GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/madiskoosaar/" class="link-card" target="_blank" rel="noopener noreferrer">
-                    <span class="link-card__icon">💼</span>
-                    <span class="link-card__text">LinkedIn</span>
-                </a>
-                <a href="https://madkoo.github.io" class="link-card" target="_blank" rel="noopener noreferrer">
-                    <span class="link-card__icon">📝</span>
-                    <span class="link-card__text">Blog</span>
-                </a>
+        <!-- Page 3: Technology Stack -->
+        <article id="stack" class="fullpage-section tech-page">
+            <div class="section-inner">
+                <h2 class="page-headline">💻 Tech Stack</h2>
+                <div class="technology-cards">
+                    <div class="tech-category">
+                        <h3 class="category-name">Code</h3>
+                        <p class="category-items">.NET, .NET Core, C#</p>
+                    </div>
+                    <div class="tech-category">
+                        <h3 class="category-name">Scripting</h3>
+                        <p class="category-items">TypeScript, JavaScript, PowerShell, Python</p>
+                    </div>
+                    <div class="tech-category">
+                        <h3 class="category-name">DevOps</h3>
+                        <p class="category-items">Azure, GitHub Actions, Docker, Terraform, Kubernetes</p>
+                    </div>
+                    <div class="tech-category">
+                        <h3 class="category-name">Databases</h3>
+                        <p class="category-items">MSSQL, PostgreSQL, SQLite, NoSQL</p>
+                    </div>
+                </div>
+                <div class="primary-focus">
+                    <strong>Focus Areas:</strong> DevOps Transformation, Platform Engineering, IaC, CI/CD
+                </div>
             </div>
-        </section>
+        </article>
 
-        <!-- Contact Section -->
-        <section class="contact">
-            <h2 class="section__title">📫 Get in Touch</h2>
-            <p class="contact__text">
-                Interested in collaborating or have questions? Feel free to reach out through 
-                <a href="https://www.linkedin.com/in/madiskoosaar/" target="_blank" rel="noopener noreferrer">LinkedIn</a> 
-                or connect with me on 
-                <a href="https://github.com/madkoo" target="_blank" rel="noopener noreferrer">GitHub</a>.
-            </p>
-        </section>
+        <!-- Page 4: Certifications -->
+        <article id="credentials" class="fullpage-section certs-page">
+            <div class="section-inner">
+                <h2 class="page-headline">🎓 Key Certifications</h2>
+                <ul class="certification-badges">
+                    <li class="badge-item">✅ GitHub Actions</li>
+                    <li class="badge-item">✅ GitHub Administration</li>
+                    <li class="badge-item">✅ GitHub Advanced Security</li>
+                    <li class="badge-item">✅ GitHub Fundamentals</li>
+                    <li class="badge-item">✅ Microsoft DevOps Engineer Expert</li>
+                    <li class="badge-item">✅ Microsoft Cybersecurity Architect Expert</li>
+                </ul>
+            </div>
+        </article>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2026 Madis Koosaar. Built with ❤️ and simple HTML/CSS.</p>
-        </footer>
+        <!-- Page 5: Connect & Contact -->
+        <article id="reach" class="fullpage-section contact-page">
+            <div class="section-inner">
+                <h2 class="page-headline">🔗 Connect</h2>
+                <div class="connection-options">
+                    <a href="https://github.com/madkoo" class="profile-link" target="_blank" rel="noopener noreferrer">
+                        <span class="link-symbol">🐙</span>
+                        <span class="link-name">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/madiskoosaar/" class="profile-link" target="_blank" rel="noopener noreferrer">
+                        <span class="link-symbol">💼</span>
+                        <span class="link-name">LinkedIn</span>
+                    </a>
+                    <a href="https://madkoo.github.io" class="profile-link" target="_blank" rel="noopener noreferrer">
+                        <span class="link-symbol">📝</span>
+                        <span class="link-name">Blog</span>
+                    </a>
+                </div>
+                <p class="outreach-message">
+                    Interested in collaborating or have questions? Feel free to reach out through 
+                    <a href="https://www.linkedin.com/in/madiskoosaar/" class="inline-link" target="_blank" rel="noopener noreferrer">LinkedIn</a> 
+                    or connect with me on 
+                    <a href="https://github.com/madkoo" class="inline-link" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                </p>
+                <footer class="page-credits">
+                    <p>&copy; 2026 Madis Koosaar. Built with ❤️ and simple HTML/CSS.</p>
+                </footer>
+            </div>
+        </article>
     </main>
+
+    <script>
+        // Track which page is currently visible
+        const pageElements = document.querySelectorAll('.fullpage-section');
+        const navIndicators = document.querySelectorAll('.indicator');
+        
+        // Configuration for intersection tracking
+        const trackingConfig = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.6
+        };
+        
+        // Create tracker to monitor page visibility
+        const pageTracker = new IntersectionObserver((observations) => {
+            observations.forEach(obs => {
+                if (obs.isIntersecting) {
+                    const pageIdentifier = obs.target.id;
+                    // Update navigation indicators
+                    navIndicators.forEach(nav => {
+                        const isCurrentPage = nav.getAttribute('href') === `#${pageIdentifier}`;
+                        nav.classList.toggle('current-page', isCurrentPage);
+                    });
+                }
+            });
+        }, trackingConfig);
+        
+        // Start tracking all pages
+        pageElements.forEach(page => pageTracker.observe(page));
+    </script>
 </body>
 </html>
